@@ -46,7 +46,7 @@ URxvt*scrollBar: false
 
 URxvt*saveLines: 5000
 
-URxvt*perl-ext-common: default,tabbedex
+URxvt*perl-ext-common: default,tabbedex, selection-to-clipboard
 
 URxvt*keysym.Control-n: perl:tabbedex:new_tab
 URxvt*keysym.Control-k: perl:tabbedex:next_tab
