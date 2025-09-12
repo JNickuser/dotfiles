@@ -329,3 +329,4 @@ exec urxvtc -name urxvt_scratchpad
 for_window [instance="btop_scratchpad"] move to scratchpad, border none
 bindsym $mod+p [instance="btop_scratchpad"] scratchpad show
 exec urxvtc -name btop_scratchpad -e btop
+exec --no-startup-id dunst
