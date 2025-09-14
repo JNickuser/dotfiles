@@ -26,3 +26,13 @@ set shiftwidth=4
 
 " change default color scheme
 colorscheme industry
+
+" General settings
+set hidden
+
+" Setting the leader key to space
+nnoremap <space> <nop>
+let mapleader = "\<space>"
+
+nnoremap <leader>bn :bn<cr> ;buffer next
+nnoremap <leader>tn gt ;new tab
