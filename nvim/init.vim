@@ -36,3 +36,12 @@ let mapleader = "\<space>"
 
 nnoremap <leader>bn :bn<cr> ;buffer next
 nnoremap <leader>tn gt ;new tab
+
+" Managing plugins with vim-plug
+call plug#begin("$XDG_CONFIG_HOME/nvim/plugged")
+    Plug 'chrisbra/csv.vim'
+    Plug 'simnalamburt/vim-mundo'
+call plug#end()
+
+autocmd BufRead,BufWritePost *.csv :%ArrangeColumn!
+autocmd BufWritePre *.csv :%UnArrangeColumn
