@@ -7,6 +7,17 @@ mkdir -p "$XDG_CONFIG_HOME/nvim"
 mkdir -p "$XDG_CONFIG_HOME/nvim/undo"
 ln -sf "$DOTFILES/nvim/init.vim" "$XDG_CONFIG_HOME/nvim"
 
+# Install neovim plugin manager
+[ ! -f "$DOTFILES/nvim/autoload/plug.vim" ] \
+    && curl -fLo "$DOTFILES/nvim/autoload/plug.vim" --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+mkdir -p "$XDG_CONFIG_HOME/nvim/autoload"
+ln -sf "$DOTFILES/nvim/autoload/plug.vim" "$XDG_CONFIG_HOME/nvim/autoload/plug.vim"
+
+# Install (or update) all the plugins
+nvim --noplugin +PlugUpdate +qa
+
 ##############
 # Xresources #
 ##############
@@ -16,7 +27,6 @@ ln -s "$DOTFILES/X11" "$XDG_CONFIG_HOME"
 ######
 # i3 #
 ######
-
 rm -rf "$XDG_CONFIG_HOME/i3"
 ln -s "$DOTFILES/i3" "$XDG_CONFIG_HOME"
 
@@ -24,7 +34,6 @@ ln -s "$DOTFILES/i3" "$XDG_CONFIG_HOME"
 #######
 # zsh #
 #######
-
 mkdir -p "$XDG_CONFIG_HOME/zsh"
 ln -sf "$DOTFILES/zsh/.zshenv" "$HOME"
 ln -sf "$DOTFILES/zsh/.zshrc" "$XDG_CONFIG_HOME/zsh"
@@ -36,7 +45,6 @@ ln -sf "$DOTFILES/zsh/external" "$XDG_CONFIG_HOME/zsh"
 #########
 # Fonts #
 #########
-
 # TODO
 # Modify to get the fonts installed
 # from arch repository if possible
@@ -46,17 +54,11 @@ cp -rf "$DOTFILES/fonts" "$XDG_DATA_HOME"
 #########
 # Dunst #
 #########
-
 mkdir -p "$XDG_CONFIG_HOME/dunst"
 ln -sf "$DOTFILES/dunst/dunstrc" "$XDG_CONFIG_HOME/dunst/dunstrc"
 
-# install neovim plugin manager
-[ ! -f "$DOTFILES/nvim/autoload/plug.vim" ] \
-    && curl -fLo "$DOTFILES/nvim/autoload/plug.vim" --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-mkdir -p "$XDG_CONFIG_HOME/nvim/autoload"
-ln -sf $DOTFILES/nvim/autoload/plug.vim" "$XDG_CONFIG_HOME/nvim/autoload/plug.vim"
-
-# Install (or update) all the plugins
-nvim --noplugin +PlugUpdate +qa
+###########
+# Zathura #
+###########
+rm -rf "$XDG_CONFIG_HOME/zathura"
+ln -s "$DOTFILES/zathura" "$XDG_CONFIG_HOME"
