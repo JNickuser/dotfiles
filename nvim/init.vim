@@ -30,17 +30,19 @@ colorscheme industry
 " General settings
 set hidden
 
-" Setting the leader key to space
+" Setting the leader key to space and remapping other keys
 nnoremap <space> <nop>
 let mapleader = "\<space>"
 
 nnoremap <leader>bn :bn<cr> ;buffer next
 nnoremap <leader>tn gt ;new tab
+nnoremap <c-w>h <c-w>s
 
 " Managing plugins with vim-plug
 call plug#begin("$XDG_CONFIG_HOME/nvim/plugged")
     Plug 'chrisbra/csv.vim'
     Plug 'simnalamburt/vim-mundo'
+    Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
 
 autocmd BufRead,BufWritePost *.csv :%ArrangeColumn!
