@@ -41,7 +41,7 @@ bindkey -M vicmd v edit-command-line
 # Sourcing scripts to extent functionality
 source ~/dotfiles/zsh/external/bd.zsh
 source $DOTFILES/zsh/scripts.sh
-ftmuxp
+#ftmuxp
 
 # Make fzf use ripgrep instead of grep
 if [ $(command -v "fzf") ]; then
