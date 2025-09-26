@@ -36,7 +36,7 @@ let mapleader = "\<space>"
 
 nnoremap <leader>bn :bn<cr> ;buffer next
 nnoremap <leader>tn gt ;new tab
-nnoremap <c-w>h <c-w>s
+" nnoremap <c-w>h <c-w>s
 
 " Managing plugins with vim-plug
 call plug#begin("$XDG_CONFIG_HOME/nvim/plugged")
